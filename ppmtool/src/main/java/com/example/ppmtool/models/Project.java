@@ -15,17 +15,18 @@ public class Project {
     private Long id;
     @NotBlank(message = "Project name is required")
     private String name;
-    @NotBlank(message = "Project name is required")
+    @NotBlank(message = "Project identifier is required")
     @Size(min = 4, max = 5, message = "Please use 4 to 5 charecters")
     @Column(updatable = false, unique = true)
     private String identifier;
-    @NotBlank(message = "Project name is required")
+    @NotBlank(message = "Project description is required")
     private String description;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date start_date;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date end_date;
     @JsonFormat(pattern = "dd-MM-yyyy")
+    @Column(updatable = false)
     private Date created_At;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date updated_At;
